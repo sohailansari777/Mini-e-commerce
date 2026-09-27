@@ -1,0 +1,26 @@
+# Environment Variables (Root, Server, Client)
+.env
+*.env
+.env.*
+server/.env
+client/.env
+
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Build outputs
+dist/
+client/dist/
+build/
+
+# Logs
+logs/
+*.log
+
+# OS & IDE Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+
+:root {
+  /* ================================
+     BRAND COLORS
+  ================================= */
+
+  --color-primary: #6F35C9;
+  --color-primary-hover: #5B27B0;
+  --color-primary-dark: #3D1B70;
+  --color-primary-light: #EEE6FF;
+
+
+  /* ================================
+     BACKGROUND COLORS
+  ================================= */
+
+  --color-background: #F7F4FF;
+  --color-surface: #FFFFFF;
+  --color-surface-soft: #FBFAFD;
+
+
+  /* ================================
+     TEXT COLORS
+  ================================= */
+
+  --color-text-primary: #211D2B;
+  --color-text-secondary: #5F5A6B;
+  --color-text-muted: #8D8899;
+  --color-text-white: #FFFFFF;
+
+
+  /* ================================
+     BORDER COLORS
+  ================================= */
+
+  --color-border: #E6E0F0;
+  --color-border-focus: #6F35C9;
+
+
+  /* ================================
+     STATUS COLORS
+  ================================= */
+
+  --color-success: #22A06B;
+  --color-error: #D64545;
+  --color-warning: #E6A23C;
+
+
+  /* ================================
+     SHADOWS
+  ================================= */
+
+  --shadow-sm: 0 2px 8px rgba(61, 27, 112, 0.06);
+
+  --shadow-md: 0 8px 24px rgba(61, 27, 112, 0.10);
+
+  --shadow-lg: 0 16px 40px rgba(61, 27, 112, 0.12);
+
+
+  /* ================================
+     RADIUS
+  ================================= */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+
+  /* ================================
+     TRANSITIONS
+  ================================= */
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
