@@ -78,7 +78,7 @@ export const UserLogin = async (req, res) => {
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       maxAge: 7 * 24 * 60 * 60 * 1000,
       path: '/'
     });
@@ -139,7 +139,7 @@ export const RefreshToken = async (req, res) => {
     res.cookie('refreshToken', tokens.refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
       maxAge: 7 * 24 * 60 * 60 * 1000,
       path: '/'
     });
@@ -174,7 +174,12 @@ export const UserLogout = async (req, res) => {
       }
     }
 
-    res.clearCookie('refreshToken', { path: '/' });
+    res.clearCookie('refreshToken', {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+      path: '/'
+    });
 
     return res.status(200).json({
       success: true,
@@ -311,7 +316,12 @@ export const DeleteAccount = async (req, res) => {
     const userId = req.user._id;
 
     await userModel.findByIdAndDelete(userId);
-    res.clearCookie('refreshToken', { path: '/' });
+    res.clearCookie('refreshToken', {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+      path: '/'
+    });
 
     return res.status(200).json({
       success: true,
